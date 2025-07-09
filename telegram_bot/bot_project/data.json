@@ -1,0 +1,187 @@
+{
+    "films": [
+        {
+            "name": "Harry Potter and the Philosopher's Stone",
+            "description": "qwerty",
+            "rating": 5,
+            "genre": "Fantasy",
+            "actors": [
+                "Daniel Radcliffe",
+                "Rupert Grint",
+                "Emma Watson",
+                "John Cleese",
+                "Robbie Coltrane",
+                "Warwick Davis",
+                "Richard Griffiths",
+                "Richard Harris",
+                "Ian Hart",
+                "John Hurt",
+                "Alan Rickman",
+                "Fiona Shaw",
+                "Maggie Smith",
+                "Julie Walters"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg"
+        },
+        {
+            "name": "The Shawshank Redemption",
+            "description": "The Shawshank Redemption is a 1994 American drama film directed by Frank Darabont, based on the 1982 Stephen King novella Rita Hayworth and the Shawshank Redemption. It tells the story of banker Andy Dufresne (Tim Robbins), who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence. Over the following two decades, he befriends a fellow prisoner, contraband smuggler Ellis 'Red' Redding (Morgan Freeman), and becomes instrumental in a money-laundering operation led by the prison warden Samuel Norton (Bob Gunton).",
+            "rating": 9.3,
+            "genre": "Drama",
+            "actors": [
+                "Tim Robbins",
+                "Morgan Freeman",
+                "Bob Gunton",
+                "William Sadler",
+                "Clancy Brown",
+                "Gil Bellows"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg"
+        },
+        {
+            "name": "The Godfather",
+            "description": "The Godfather is a 1972 American crime film directed by Francis Ford Coppola and produced by Albert S. Ruddy, based on the 1969 novel of the same name by Mario Puzo. It stars Marlon Brando, Al Pacino, James Caan, Richard S. Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte, and Diane Keaton. The film tells the story of the Corleone family, a powerful Mafia family in New York City.",
+            "rating": 9.2,
+            "genre": "Crime",
+            "actors": [
+                "Marlon Brando",
+                "Al Pacino",
+                "James Caan",
+                "Robert Duvall",
+                "Diane Keaton"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg"
+        },
+        {
+            "name": "The Dark Knight",
+            "description": "The Dark Knight is a 2008 superhero film directed, co-produced, and co-written by Christopher Nolan from a story by Nolan and David S. Goyer. Based on the DC Comics character Batman, the film is the second installment in Nolan's The Dark Knight Trilogy and a sequel to 2005's Batman Begins. It stars Christian Bale as Bruce Wayne / Batman, Michael Caine as Alfred Pennyworth, Heath Ledger as the Joker, Gary Oldman as James Gordon, Aaron Eckhart as Harvey Dent / Two-Face, Maggie Gyllenhaal as Rachel Dawes, and Morgan Freeman as Lucius Fox. In the film, Batman, Lieutenant James Gordon, and District Attorney Harvey Dent form an alliance to dismantle organized crime in Gotham City, but they are opposed by an anarchistic mastermind known as the Joker, who seeks to test the limits of their morality.",
+            "rating": 9.0,
+            "genre": "Action",
+            "actors": [
+                "Christian Bale",
+                "Heath Ledger",
+                "Gary Oldman",
+                "Aaron Eckhart",
+                "Michael Caine",
+                "Maggie Gyllenhaal",
+                "Morgan Freeman"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg"
+        },
+        {
+            "name": "Pulp Fiction",
+            "description": "Pulp Fiction is a 1994 American neo-noir crime film written and directed by Quentin Tarantino, who conceived it with Roger Avary. Starring John Travolta, Samuel L. Jackson, Uma Thurman, Harvey Keitel, Tim Roth, Amanda Plummer, Ving Rhames, and Bruce Willis, the film tells several interconnected stories of crime in Los Angeles.",
+            "rating": 8.9,
+            "genre": "Crime",
+            "actors": [
+                "John Travolta",
+                "Samuel L. Jackson",
+                "Uma Thurman",
+                "Harvey Keitel",
+                "Tim Roth",
+                "Bruce Willis"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg"
+        },
+        {
+            "name": "Fight Club",
+            "description": "Fight Club is a 1999 American film directed by David Fincher and starring Brad Pitt, Edward Norton, and Helena Bonham Carter. It is based on the 1996 novel of the same name by Chuck Palahniuk. Norton plays an unnamed narrator, an insomniac office worker dissatisfied with his white-collar job. He forms a 'fight club' with a soap salesman, Tyler Durden (Pitt), and becomes embroiled in a relationship with a woman, Marla Singer (Bonham Carter).",
+            "rating": 8.8,
+            "genre": "Drama",
+            "actors": [
+                "Brad Pitt",
+                "Edward Norton",
+                "Helena Bonham Carter"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg"
+        },
+        {
+            "name": "Forrest Gump",
+            "description": "Forrest Gump is a 1994 American comedy-drama film directed by Robert Zemeckis and written by Eric Roth. It is based on the 1986 novel of the same name by Winston Groom. The film stars Tom Hanks, Robin Wright, Gary Sinise, Mykelti Williamson, and Sally Field. The story depicts several decades in the life of a slow-witted but kind-hearted man from Alabama who witnesses and unwittingly influences several defining historical events in the 20th century United States.",
+            "rating": 8.8,
+            "genre": "Drama",
+            "actors": [
+                "Tom Hanks",
+                "Robin Wright",
+                "Gary Sinise",
+                "Sally Field"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg"
+        },
+        {
+            "name": "Inception",
+            "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given his inverse task of planting an idea into the mind of a C.E.O.",
+            "rating": 8.7,
+            "genre": "Sci-Fi",
+            "actors": [
+                "Leonardo DiCaprio",
+                "Joseph Gordon-Levitt",
+                "Elliot Page",
+                "Tom Hardy"
+            ],
+            "poster": "https://miro.medium.com/v2/resize:fit:1400/1*xLahrUiFfXAs8s_Q8JKcbA@2x.jpeg"
+        },
+        {
+            "name": "The Matrix",
+            "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+            "rating": 8.7,
+            "genre": "Sci-Fi",
+            "actors": [
+                "Keanu Reeves",
+                "Laurence Fishburne",
+                "Carrie-Anne Moss",
+                "Hugo Weaving"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/9/94/The_Matrix.jpg"
+        },
+        {
+            "name": "Spirited Away",
+            "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+            "rating": 8.6,
+            "genre": "Animation",
+            "actors": [
+                "Rumi Hiiragi",
+                "Miyu Irino",
+                "Mari Natsuki",
+                "Bunta Sugawara"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png"
+        },
+        {
+            "name": "Interstellar",
+            "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+            "rating": 8.6,
+            "genre": "Sci-Fi",
+            "actors": [
+                "Matthew McConaughey",
+                "Anne Hathaway",
+                "Jessica Chastain",
+                "Michael Caine"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/ro/b/bc/Interstellar_film_poster.jpg"
+        },
+        {
+            "name": "Parasite",
+            "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+            "rating": 8.5,
+            "genre": "Comedy",
+            "actors": [
+                "Song Kang-ho",
+                "Choi Woo-shik",
+                "Park So-dam",
+                "Jang Hye-jin"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png"
+        },
+        {
+            "name": "q",
+            "description": "q",
+            "rating": 10.0,
+            "genre": "fantasy",
+            "actors": [
+                "w"
+            ],
+            "poster": "https://img.championat.com/s/1350x900/news/big/h/o/drel-kaska-kuvalda-i-dzhejson-stejtem-na-svezhem-postere-boevika-master_17422819001435836412.jpg"
+        }
+    ]
+}

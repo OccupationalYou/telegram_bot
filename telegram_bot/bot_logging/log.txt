@@ -1,0 +1,9 @@
+2025-05-15 13:00:41,565 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 13:00:41,619 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 13:00:48,529 - BotLogger - INFO - Виклик функції: search_movie
+2025-05-15 13:00:48,882 - aiogram.event - INFO - Update id=922779563 is handled. Duration 344 ms by bot id=7585888382
+2025-05-15 13:01:07,338 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 13:01:07,517 - aiogram.event - INFO - Update id=922779564 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 13:01:09,134 - aiogram.event - INFO - Update id=922779565 is handled. Duration 406 ms by bot id=7585888382
+2025-05-15 13:03:21,341 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 13:03:21,615 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'

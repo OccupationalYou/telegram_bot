@@ -1,0 +1,923 @@
+2025-05-15 16:12:55,642 - aiogram.event - INFO - Update id=922779701 is not handled. Duration 233 ms by bot id=7585888382
+2025-05-15 16:12:55,643 - aiogram.event - ERROR - Cause exception while process update id=922779701 by bot id=7585888382
+TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=4826956856080636465)>
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 627, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\multipart.py", line 952, in write
+    await part.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\types\input_file.py", line 148, in read
+    async for chunk in stream:
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 207, in stream_content
+    async with session.get(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 696, in _request
+    resp.raise_for_status()
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1070, in raise_for_status
+    raise ClientResponseError(
+aiohttp.client_exceptions.ClientResponseError: 404, message='Not Found', url=URL('https://upload.wikimedia.org/wikipedia/en/9/9a/Inception_poster.jpg')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 181, in make_request
+    async with session.post(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 608, in _request
+    await resp.start(conn)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 976, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\streams.py", line 640, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=4826956856080636465)>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 172, in callb_film
+    await callback.message.answer_photo(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 188, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=4826956856080636465)>
+2025-05-15 17:45:30,418 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 17:45:30,675 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 17:45:40,686 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 17:45:40,731 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 17:45:42,482 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 17:45:42,651 - aiogram.event - INFO - Update id=922779702 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 17:45:44,050 - aiogram.event - INFO - Update id=922779703 is not handled. Duration 266 ms by bot id=7585888382
+2025-05-15 17:45:44,050 - aiogram.event - ERROR - Cause exception while process update id=922779703 by bot id=7585888382
+TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=-8167799121812562453)>
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 627, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\multipart.py", line 952, in write
+    await part.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\types\input_file.py", line 148, in read
+    async for chunk in stream:
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 207, in stream_content
+    async with session.get(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 696, in _request
+    resp.raise_for_status()
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1070, in raise_for_status
+    raise ClientResponseError(
+aiohttp.client_exceptions.ClientResponseError: 404, message='Not Found', url=URL('https://upload.wikimedia.org/wikipedia/en/5/50/Parasite_(2019_film)_poster.jpg')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 181, in make_request
+    async with session.post(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 608, in _request
+    await resp.start(conn)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 976, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\streams.py", line 640, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=-8167799121812562453)>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 172, in callb_film
+    await callback.message.answer_photo(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 188, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=-8167799121812562453)>
+2025-05-15 17:55:01,618 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 17:55:01,824 - aiogram.event - INFO - Update id=922779704 is handled. Duration 218 ms by bot id=7585888382
+2025-05-15 17:55:03,271 - aiogram.event - INFO - Update id=922779705 is handled. Duration 562 ms by bot id=7585888382
+2025-05-15 17:58:47,331 - aiogram.event - INFO - Update id=922779706 is handled. Duration 687 ms by bot id=7585888382
+2025-05-15 17:58:51,317 - aiogram.event - INFO - Update id=922779707 is handled. Duration 234 ms by bot id=7585888382
+2025-05-15 18:02:19,738 - aiogram.event - INFO - Update id=922779708 is handled. Duration 483 ms by bot id=7585888382
+2025-05-15 18:02:20,365 - aiogram.event - INFO - Update id=922779709 is handled. Duration 436 ms by bot id=7585888382
+2025-05-15 18:02:25,262 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:02:25,524 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:23:10,912 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:23:10,959 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:23:13,248 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:23:13,511 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:28:06,927 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:28:06,972 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:28:12,712 - aiogram.event - INFO - Update id=922779710 is handled. Duration 187 ms by bot id=7585888382
+2025-05-15 18:28:15,827 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:28:15,828 - aiogram.event - INFO - Update id=922779711 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:28:15,828 - aiogram.event - ERROR - Cause exception while process update id=922779711 by bot id=7585888382
+ValueError: Row size 10 is not allowed, range: [1, 8]
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_logging\log.py", line 19, in wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 76, in show_films
+    markup = films_keyboard_markup(films_list=data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\keyboards.py", line 14, in films_keyboard_markup
+    builder.adjust(10, repeat=True)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\utils\keyboard.py", line 228, in adjust
+    size = next(sizes_iter)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\utils\keyboard.py", line 144, in _validate_size
+    raise ValueError(
+ValueError: Row size 10 is not allowed, range: [1, 8]
+2025-05-15 18:28:20,151 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:28:20,151 - aiogram.event - INFO - Update id=922779712 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:28:20,151 - aiogram.event - ERROR - Cause exception while process update id=922779712 by bot id=7585888382
+ValueError: Row size 10 is not allowed, range: [1, 8]
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_logging\log.py", line 19, in wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 76, in show_films
+    markup = films_keyboard_markup(films_list=data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\keyboards.py", line 14, in films_keyboard_markup
+    builder.adjust(10, repeat=True)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\utils\keyboard.py", line 228, in adjust
+    size = next(sizes_iter)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\utils\keyboard.py", line 144, in _validate_size
+    raise ValueError(
+ValueError: Row size 10 is not allowed, range: [1, 8]
+2025-05-15 18:28:35,452 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:28:35,452 - aiogram.event - INFO - Update id=922779713 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:28:35,452 - aiogram.event - ERROR - Cause exception while process update id=922779713 by bot id=7585888382
+ValueError: Row size 10 is not allowed, range: [1, 8]
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_logging\log.py", line 19, in wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 76, in show_films
+    markup = films_keyboard_markup(films_list=data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\keyboards.py", line 14, in films_keyboard_markup
+    builder.adjust(5, repeat=True)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\utils\keyboard.py", line 228, in adjust
+    size = next(sizes_iter)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\utils\keyboard.py", line 144, in _validate_size
+    raise ValueError(
+ValueError: Row size 10 is not allowed, range: [1, 8]
+2025-05-15 18:28:46,542 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:28:46,795 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:28:49,314 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:28:49,359 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:28:49,412 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:28:49,583 - aiogram.event - INFO - Update id=922779714 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:29:00,038 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:29:00,288 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:29:02,689 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:29:02,732 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:29:03,542 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:29:03,722 - aiogram.event - INFO - Update id=922779715 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:29:24,331 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:29:24,587 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:29:27,834 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:29:27,880 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:29:29,379 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:29:29,640 - aiogram.event - INFO - Update id=922779716 is handled. Duration 264 ms by bot id=7585888382
+2025-05-15 18:30:10,461 - aiogram.event - INFO - Update id=922779717 is handled. Duration 233 ms by bot id=7585888382
+2025-05-15 18:30:12,313 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:30:12,403 - aiogram.event - INFO - Update id=922779718 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 18:30:16,831 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:30:17,081 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:32:15,941 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:32:15,986 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:32:16,535 - aiogram.event - INFO - Update id=922779719 is handled. Duration 155 ms by bot id=7585888382
+2025-05-15 18:32:19,196 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:32:19,275 - aiogram.event - INFO - Update id=922779720 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:32:48,346 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:32:48,604 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:32:51,087 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:32:51,134 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:32:51,189 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:32:51,358 - aiogram.event - INFO - Update id=922779721 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:33:01,249 - aiogram.event - INFO - Update id=922779722 is handled. Duration 63 ms by bot id=7585888382
+2025-05-15 18:33:02,877 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:33:02,958 - aiogram.event - INFO - Update id=922779723 is handled. Duration 77 ms by bot id=7585888382
+2025-05-15 18:34:13,144 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:34:13,225 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2685)
+2025-05-15 18:34:13,225 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7585888382)
+2025-05-15 18:34:13,404 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:34:15,815 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:34:15,858 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:34:17,130 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:34:17,311 - aiogram.event - INFO - Update id=922779724 is handled. Duration 186 ms by bot id=7585888382
+2025-05-15 18:34:24,962 - aiogram.event - INFO - Update id=922779725 is handled. Duration 77 ms by bot id=7585888382
+2025-05-15 18:34:28,016 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:34:28,146 - aiogram.event - INFO - Update id=922779726 is handled. Duration 125 ms by bot id=7585888382
+2025-05-15 18:35:24,088 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:35:24,352 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:35:26,888 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:35:26,936 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:35:27,176 - aiogram.event - INFO - Update id=922779727 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:35:29,208 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:35:29,298 - aiogram.event - INFO - Update id=922779728 is handled. Duration 94 ms by bot id=7585888382
+2025-05-15 18:35:54,233 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 18:35:54,507 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:47:37,096 - aiogram.dispatcher - INFO - Start polling
+2025-05-15 18:47:37,140 - aiogram.dispatcher - INFO - Run polling for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
+2025-05-15 18:47:37,195 - BotLogger - INFO - Виклик функції: film_create
+2025-05-15 18:47:37,352 - aiogram.event - INFO - Update id=922779730 is handled. Duration 156 ms by bot id=7585888382
+2025-05-15 18:47:37,375 - aiogram.event - INFO - Update id=922779729 is handled. Duration 188 ms by bot id=7585888382
+2025-05-15 18:47:37,401 - aiogram.event - INFO - Update id=922779731 is handled. Duration 218 ms by bot id=7585888382
+2025-05-15 18:47:46,004 - aiogram.event - INFO - Update id=922779732 is handled. Duration 63 ms by bot id=7585888382
+2025-05-15 18:47:50,078 - aiogram.event - INFO - Update id=922779733 is handled. Duration 77 ms by bot id=7585888382
+2025-05-15 18:47:51,859 - aiogram.event - INFO - Update id=922779734 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:47:51,859 - aiogram.event - ERROR - Cause exception while process update id=922779734 by bot id=7585888382
+ValueError: could not convert string to float: 'sdfds'
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 119, in film_rating
+    await state.update_data(rating=float(message.text))
+                                   ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'sdfds'
+2025-05-15 18:47:54,043 - aiogram.event - INFO - Update id=922779735 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:47:54,044 - aiogram.event - ERROR - Cause exception while process update id=922779735 by bot id=7585888382
+ValueError: could not convert string to float: 'ddfsfffffff'
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 119, in film_rating
+    await state.update_data(rating=float(message.text))
+                                   ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ddfsfffffff'
+2025-05-15 18:47:55,276 - aiogram.event - INFO - Update id=922779736 is not handled. Duration 15 ms by bot id=7585888382
+2025-05-15 18:47:55,277 - aiogram.event - ERROR - Cause exception while process update id=922779736 by bot id=7585888382
+ValueError: could not convert string to float: 'dsfdss'
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 119, in film_rating
+    await state.update_data(rating=float(message.text))
+                                   ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'dsfdss'
+2025-05-15 18:47:57,056 - aiogram.event - INFO - Update id=922779737 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:47:57,056 - aiogram.event - ERROR - Cause exception while process update id=922779737 by bot id=7585888382
+ValueError: could not convert string to float: 'dsffssssssss'
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 119, in film_rating
+    await state.update_data(rating=float(message.text))
+                                   ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'dsffssssssss'
+2025-05-15 18:47:58,655 - aiogram.event - INFO - Update id=922779738 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:48:01,616 - aiogram.event - INFO - Update id=922779739 is handled. Duration 156 ms by bot id=7585888382
+2025-05-15 18:48:06,735 - aiogram.event - INFO - Update id=922779740 is handled. Duration 125 ms by bot id=7585888382
+2025-05-15 18:48:10,428 - aiogram.event - INFO - Update id=922779741 is handled. Duration 63 ms by bot id=7585888382
+2025-05-15 18:48:22,152 - BotLogger - INFO - Виклик функції: delete_movie
+2025-05-15 18:48:22,284 - aiogram.event - INFO - Update id=922779742 is handled. Duration 140 ms by bot id=7585888382
+2025-05-15 18:48:24,899 - aiogram.event - INFO - Update id=922779743 is handled. Duration 187 ms by bot id=7585888382
+2025-05-15 18:48:27,421 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:48:27,499 - aiogram.event - INFO - Update id=922779744 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:48:32,859 - aiogram.event - INFO - Update id=922779745 is handled. Duration 906 ms by bot id=7585888382
+2025-05-15 18:48:38,160 - BotLogger - INFO - Виклик функції: delete_movie
+2025-05-15 18:48:38,233 - aiogram.event - INFO - Update id=922779746 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:48:40,750 - aiogram.event - INFO - Update id=922779747 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:54:26,813 - aiogram.event - INFO - Update id=922779748 is handled. Duration 234 ms by bot id=7585888382
+2025-05-15 18:54:36,206 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:54:36,284 - aiogram.event - INFO - Update id=922779749 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:54:42,946 - aiogram.event - INFO - Update id=922779750 is not handled. Duration 156 ms by bot id=7585888382
+2025-05-15 18:54:42,946 - aiogram.event - ERROR - Cause exception while process update id=922779750 by bot id=7585888382
+TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=1480358015961505040)>
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 627, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\multipart.py", line 952, in write
+    await part.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\types\input_file.py", line 148, in read
+    async for chunk in stream:
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 207, in stream_content
+    async with session.get(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 696, in _request
+    resp.raise_for_status()
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1070, in raise_for_status
+    raise ClientResponseError(
+aiohttp.client_exceptions.ClientResponseError: 404, message='Not Found', url=URL('https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 181, in make_request
+    async with session.post(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 608, in _request
+    await resp.start(conn)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 976, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\streams.py", line 640, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=1480358015961505040)>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 172, in callb_film
+    await callback.message.answer_photo(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 188, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=1480358015961505040)>
+2025-05-15 18:54:48,663 - aiogram.event - INFO - Update id=922779751 is handled. Duration 343 ms by bot id=7585888382
+2025-05-15 18:54:59,103 - aiogram.event - INFO - Update id=922779752 is handled. Duration 141 ms by bot id=7585888382
+2025-05-15 18:55:01,281 - aiogram.event - INFO - Update id=922779753 is handled. Duration 186 ms by bot id=7585888382
+2025-05-15 18:55:08,454 - BotLogger - INFO - Виклик функції: filter_movies
+2025-05-15 18:55:08,602 - aiogram.event - INFO - Update id=922779754 is handled. Duration 141 ms by bot id=7585888382
+2025-05-15 18:55:15,535 - aiogram.event - INFO - Update id=922779755 is handled. Duration 203 ms by bot id=7585888382
+2025-05-15 18:55:22,487 - BotLogger - INFO - Виклик функції: search_movie
+2025-05-15 18:55:22,598 - aiogram.event - INFO - Update id=922779756 is handled. Duration 110 ms by bot id=7585888382
+2025-05-15 18:55:30,358 - aiogram.event - INFO - Update id=922779757 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:55:41,815 - BotLogger - INFO - Виклик функції: delete_movie
+2025-05-15 18:55:41,929 - aiogram.event - INFO - Update id=922779758 is handled. Duration 110 ms by bot id=7585888382
+2025-05-15 18:55:45,758 - aiogram.event - INFO - Update id=922779759 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:55:48,880 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:55:48,993 - aiogram.event - INFO - Update id=922779760 is handled. Duration 108 ms by bot id=7585888382
+2025-05-15 18:55:59,419 - BotLogger - INFO - Виклик функції: edit_movie
+2025-05-15 18:55:59,523 - aiogram.event - INFO - Update id=922779761 is handled. Duration 109 ms by bot id=7585888382
+2025-05-15 18:56:09,736 - aiogram.event - INFO - Update id=922779762 is handled. Duration 61 ms by bot id=7585888382
+2025-05-15 18:56:15,621 - aiogram.event - INFO - Update id=922779763 is handled. Duration 110 ms by bot id=7585888382
+2025-05-15 18:56:20,629 - aiogram.event - INFO - Update id=922779764 is handled. Duration 406 ms by bot id=7585888382
+2025-05-15 18:56:29,859 - BotLogger - INFO - Виклик функції: rate_movie
+2025-05-15 18:56:29,980 - aiogram.event - INFO - Update id=922779765 is handled. Duration 125 ms by bot id=7585888382
+2025-05-15 18:56:36,526 - aiogram.event - INFO - Update id=922779766 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:56:39,341 - aiogram.event - INFO - Update id=922779767 is handled. Duration 125 ms by bot id=7585888382
+2025-05-15 18:56:42,136 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:56:42,238 - aiogram.event - INFO - Update id=922779768 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 18:56:43,430 - aiogram.event - INFO - Update id=922779769 is handled. Duration 313 ms by bot id=7585888382
+2025-05-15 18:56:54,176 - BotLogger - INFO - Виклик функції: recommend_movie
+2025-05-15 18:56:54,249 - aiogram.event - INFO - Update id=922779770 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:57:10,413 - BotLogger - INFO - Виклик функції: sort_by_alphabet
+2025-05-15 18:57:10,564 - aiogram.event - INFO - Update id=922779771 is handled. Duration 156 ms by bot id=7585888382
+2025-05-15 18:57:19,882 - BotLogger - INFO - Виклик функції: search_by_actor
+2025-05-15 18:57:19,950 - aiogram.event - INFO - Update id=922779772 is handled. Duration 77 ms by bot id=7585888382
+2025-05-15 18:57:36,637 - aiogram.event - INFO - Update id=922779773 is handled. Duration 312 ms by bot id=7585888382
+2025-05-15 18:58:00,017 - BotLogger - INFO - Виклик функції: search_by_actor
+2025-05-15 18:58:00,206 - aiogram.event - INFO - Update id=922779774 is handled. Duration 187 ms by bot id=7585888382
+2025-05-15 18:58:02,082 - aiogram.event - INFO - Update id=922779775 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 18:58:11,281 - BotLogger - INFO - Виклик функції: film_create
+2025-05-15 18:58:11,353 - aiogram.event - INFO - Update id=922779776 is handled. Duration 63 ms by bot id=7585888382
+2025-05-15 18:58:15,825 - aiogram.event - INFO - Update id=922779777 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 18:58:19,590 - aiogram.event - INFO - Update id=922779778 is handled. Duration 141 ms by bot id=7585888382
+2025-05-15 18:58:21,572 - aiogram.event - INFO - Update id=922779779 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 18:58:28,789 - aiogram.event - INFO - Update id=922779780 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 18:58:31,352 - aiogram.event - INFO - Update id=922779781 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 18:58:49,882 - aiogram.event - INFO - Update id=922779782 is handled. Duration 172 ms by bot id=7585888382
+2025-05-15 18:58:51,976 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:58:52,319 - aiogram.event - INFO - Update id=922779783 is handled. Duration 343 ms by bot id=7585888382
+2025-05-15 18:58:54,068 - aiogram.event - INFO - Update id=922779784 is not handled. Duration 0 ms by bot id=7585888382
+2025-05-15 18:58:54,068 - aiogram.event - ERROR - Cause exception while process update id=922779784 by bot id=7585888382
+TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=1480358015961505040)>
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 627, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\multipart.py", line 952, in write
+    await part.write(writer)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\types\input_file.py", line 148, in read
+    async for chunk in stream:
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 207, in stream_content
+    async with session.get(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 548, in _request
+    req = self._request_class(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 327, in __init__
+    self.update_host(url)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 401, in update_host
+    raise InvalidURL(url)
+aiohttp.client_exceptions.InvalidURL: w
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 181, in make_request
+    async with session.post(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client.py", line 608, in _request
+    await resp.start(conn)
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 976, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiohttp\streams.py", line 640, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=1480358015961505040)>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\telegram_bot\bot_project\bot.py", line 172, in callb_film
+    await callback.message.answer_photo(
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\QQ\PycharmProjects\pythonProject3\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 188, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectionError: Failed to send bytes into the underlying connection Connection<ConnectionKey(host='api.telegram.org', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=1480358015961505040)>
+2025-05-15 18:59:10,881 - BotLogger - INFO - Виклик функції: delete_movie
+2025-05-15 18:59:11,056 - aiogram.event - INFO - Update id=922779785 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 18:59:13,458 - aiogram.event - INFO - Update id=922779786 is handled. Duration 77 ms by bot id=7585888382
+2025-05-15 18:59:15,892 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 18:59:15,982 - aiogram.event - INFO - Update id=922779787 is handled. Duration 93 ms by bot id=7585888382
+2025-05-15 19:00:20,734 - BotLogger - INFO - Виклик функції: film_create
+2025-05-15 19:00:20,904 - aiogram.event - INFO - Update id=922779788 is handled. Duration 171 ms by bot id=7585888382
+2025-05-15 19:00:23,990 - aiogram.event - INFO - Update id=922779789 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 19:00:24,871 - aiogram.event - INFO - Update id=922779790 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 19:00:27,922 - aiogram.event - INFO - Update id=922779791 is handled. Duration 94 ms by bot id=7585888382
+2025-05-15 19:00:32,206 - aiogram.event - INFO - Update id=922779792 is handled. Duration 155 ms by bot id=7585888382
+2025-05-15 19:00:34,416 - aiogram.event - INFO - Update id=922779793 is handled. Duration 78 ms by bot id=7585888382
+2025-05-15 19:00:46,293 - aiogram.event - INFO - Update id=922779794 is handled. Duration 235 ms by bot id=7585888382
+2025-05-15 19:00:49,653 - BotLogger - INFO - Виклик функції: show_films
+2025-05-15 19:00:49,794 - aiogram.event - INFO - Update id=922779795 is handled. Duration 141 ms by bot id=7585888382
+2025-05-15 19:00:51,459 - aiogram.event - INFO - Update id=922779796 is handled. Duration 796 ms by bot id=7585888382
+2025-05-15 19:01:01,781 - BotLogger - INFO - Виклик функції: filter_movies
+2025-05-15 19:01:01,850 - aiogram.event - INFO - Update id=922779797 is handled. Duration 63 ms by bot id=7585888382
+2025-05-15 19:01:04,602 - aiogram.event - INFO - Update id=922779798 is handled. Duration 141 ms by bot id=7585888382
+2025-05-15 19:02:58,206 - aiogram.dispatcher - INFO - Polling stopped
+2025-05-15 19:02:58,463 - aiogram.dispatcher - INFO - Polling stopped for bot @Films_choose_helper_bot id=7585888382 - 'FilmHelper'
